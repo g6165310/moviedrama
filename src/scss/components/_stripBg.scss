@@ -1,0 +1,15 @@
+.bg-strip{
+    padding: 20px 30px;
+    background:
+      linear-gradient(180deg, $dark 25%,$light 25%,$light 75%,$dark 75%,$dark 100%),linear-gradient(180deg, $dark 25%,$light 25%,$light 75%,$dark 75%,$dark 100%),
+      $dark;
+    background-size: 15px 30px;
+    background-position: 5px 10px,calc(100% - 5px) 10px;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    @include respond-to(phone-h){
+        padding: 20px 60px;
+        background-size: 30px 60px,30px 60px;
+        background-position: 10px 10px,calc(100% - 10px) 10px;
+     }
+  }

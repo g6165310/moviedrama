@@ -1,0 +1,68 @@
+// *************************************
+//
+//   Config
+//   -> font face,color,variable
+//
+// *************************************
+
+// -------------------------------------
+//   font-face
+// -------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@font-face {
+    font-family: 'Anton';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('~@/fonts/anton-v15-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Anton'),
+         url('~@/fonts/anton-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('~@/fonts/anton-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('~@/fonts/anton-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('~@/fonts/anton-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('~@/fonts/anton-v15-latin-regular.svg#Anton') format('svg'); /* Legacy iOS */
+  }
+// -------------------------------------
+//   Colors
+// -------------------------------------
+
+// ----- Base ----- //
+
+$primary:#4b6777;
+$secondary:#c1432e;
+$highlight:#ce9e62;
+$dark:#2c2c2c;
+$light:#F5F1F2;
+
+// ----- Borders & Box Shadow ----- //
+
+$b-borderStyle: solid;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+
+$bg-logo:'../assets/logo.png';
+
+// ----- Breakpoints ----- //
+$b-breakpoints:(
+    phone-s:320px,
+    phone:480px,
+    phone-h:568px,
+    pad-d:767px,
+    pad:768px,
+    pc:1200px,
+);
+// ----- Typography ----- //
+$b-fontFamily:'Roboto' ,sans-serif;
+$b-fontSize:16px;
+$b-fontSize-s: $b-fontSize*0.75;
+$b-fontSize-2x: $b-fontSize*2;
+$b-fontSize-3x: $b-fontSize*3;
+$b-lineHeight: 1.5;
+
+// ----- Sizing ----- //
+$b-space-s:12px;
+$b-space-m:$b-space-s*2;
+$b-space-l:$b-space-s*3

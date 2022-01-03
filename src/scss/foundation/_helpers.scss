@@ -1,0 +1,77 @@
+// *************************************
+//
+//   Helpers
+//   -> Functions、mixin、extend、Animations
+//
+// *************************************
+
+// -------------------------------------
+//   Functions
+// -------------------------------------
+
+// -------------------------------------
+//   Mixins
+// -------------------------------------
+
+// ----- respond-to ----- //
+// -> RWD 斷點
+// $breakpoint - the breakpoint size
+@mixin respond-to($breakpoint) {
+    @media screen and (min-width:map-get($b-breakpoints, $breakpoint)){
+        @content;
+    }
+}
+
+// ----- text-hide ----- //
+// -> 圖片取代文字用
+@mixin text-hide {
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 101%;
+}
+
+// ----- text-shorten ----- //
+// -> 圖片取代文字用
+@mixin text-shorten {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+//
+@mixin logo($bg-url,$w,$h) {
+    a{
+        display: block;
+        background: url($bg-url) no-repeat;
+        width: $w;
+        height: $h;
+        @include text-hide
+    }
+    
+}
+
+
+// -------------------------------------
+//   Animations
+// -------------------------------------
+
+// ----- Loading ----- //
+@keyframes loading {
+    0%{
+        left: 0;
+    }
+    100%{
+       left: 10px;
+    }
+}
+@keyframes text-wave {
+    0%{
+        transform: translateY(0px);
+    }
+    20%{
+        transform: translateY(-20px);
+    }
+    40%,100%{
+        transform: translateY(0px);
+    }
+}

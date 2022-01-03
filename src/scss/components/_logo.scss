@@ -1,0 +1,5 @@
+.logo{
+    height: 100px;
+    width: 180px;
+    @include logo($bg-logo,100%,100%)
+}
