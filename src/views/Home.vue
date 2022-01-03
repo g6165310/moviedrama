@@ -37,17 +37,17 @@ export default {
   setup (context) {
     // ---- variable ----//
     const { isLoading } = useStore()
-    const page = ref(1)
+    const page = ref(0)
 
     // ---- nowing ----//
     const nowing = ref([])
     const { results, totalPages, getNowing } = useData()
     // ---- infinite scrolling ----//
     const handler = async () => {
-      if (isLoading.value || totalPages.value === page.value) {
+      if (isLoading.value || (totalPages.value === page.value && totalPages.value !== 0)) {
         return
       }
-      await getNowing(page.value)
+      await getNowing(page.value + 1)
       page.value = totalPages.value === page.value ? page.value : page.value + 1
       nowing.value.push(...results.value)
     }

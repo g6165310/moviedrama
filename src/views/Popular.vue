@@ -42,7 +42,7 @@ export default {
     const type = ref(route.params.type)
     // ---- popular data ----//
     const popular = ref([])
-    const page = ref(1)
+    const page = ref(0)
     const { results, totalPages, getPopular } = useData()
     onBeforeRouteUpdate(async (to, from) => {
       window.scrollTo(0, 0)
@@ -56,11 +56,10 @@ export default {
 
     // ---- infinite scrolling ----//
     const handler = async () => {
-      console.log(type.value)
-      if (isLoading.value || totalPages.value === page.value) {
+      if (isLoading.value || (totalPages.value === page.value && totalPages.value !== 0)) {
         return
       }
-      await getPopular(type.value, page.value)
+      await getPopular(type.value, page.value + 1)
       page.value = totalPages.value === page.value ? page.value : page.value + 1
       popular.value.push(...results.value)
     }

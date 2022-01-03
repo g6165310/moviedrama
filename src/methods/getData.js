@@ -72,7 +72,7 @@ export default function () {
     const date = `${new Date().getFullYear()}/${new Date().getMonth()}/${new Date().getDate()}`
     if (!localStorage.getItem('date') || localStorage.getItem('date') !== date) {
       const type = (Math.random() * 1 <= 0.4) ? 'movie' : 'tv'
-      const { responseZh } = await fetchData(`${type}/latest`)
+      const { responseZh } = await fetchData(`${type}/latest`, {}, isDaily)
       while (1) {
         const random = Math.floor(Math.random() * (responseZh.value.id + 1))
         await getDetails(type, random, isDaily)
