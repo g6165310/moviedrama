@@ -21,7 +21,7 @@
   >
     <router-view />
   </section>
-  <footer>
+  <footer v-if="!isLoading">
     <p>
       &copy; Copyright 2021 g6165310@gmail.com
     </p>
@@ -38,10 +38,11 @@ export default {
   },
   setup () {
     // ---- Nav ----//
-    const { isNavOpen, toggleIsNavOpen } = useStore()
+    const { isNavOpen, isLoading, toggleIsNavOpen } = useStore()
     return {
       toggleIsNavOpen,
-      isNavOpen
+      isNavOpen,
+      isLoading
     }
   }
 }
