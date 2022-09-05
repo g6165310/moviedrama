@@ -3,7 +3,7 @@
 ![home](/src/assets/readme/home.PNG)
 ## Demo
 
-[Demo]()
+[Demo](https://g6165310.github.io/moviedrama/#/)
 
 ## 介紹
 Vue 2 更新至 Vue 3 有蠻大的改動，由於想試看看使用 Vue 3 開發，也藉此練習的過程中了解 Vue 3 的改動。
